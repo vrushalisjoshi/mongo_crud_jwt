@@ -3,11 +3,10 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 mongoose.Promise = global.Promise;
-const dbConfig = require("./config/database");
 const userRoutes = require("./api/users/user.router");
 
 mongoose
-  .connect(dbConfig.url, {
+  .connect(process.env.DB_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useFindAndModify: false,

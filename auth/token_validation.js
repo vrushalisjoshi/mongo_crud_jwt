@@ -12,7 +12,6 @@ module.exports = {
           });
         } else {
           req.decoded = decoded;
-          console.log(decoded);
           next();
         }
       });
